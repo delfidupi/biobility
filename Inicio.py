@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 import streamlit as st
 from funciones import dni_exists, insertUser, insertEmpresa, id_empresa_exist
-from streamlit_extras.switch_page_button import switch_page
+
 
 
 
