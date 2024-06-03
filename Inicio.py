@@ -1,4 +1,11 @@
+import importlib
+import sys
+from pathlib import Path
 import streamlit as st
+from funciones import dni_exists, insertUser, insertEmpresa, id_empresa_exist
+from streamlit_extras.switch_page_button import switch_page
+
+
 
 st.set_page_config(
     page_title="Biobility",
@@ -28,3 +35,30 @@ st.markdown(
     ### ¡Regístrate hoy mismo y comienza a dar el siguiente paso en tu carrera profesional con Biobility!
 """
 )
+
+col1, col2 = st.columns(2)
+
+
+with col1:
+    st.header("Usuario")
+    dni = st.text_input("Ingrese su DNI", key="dni_usuario")
+    if st.button("Ingresar como Usuario"):
+        if dni_exists(dni):
+            st.success("Usuario encontrado")
+            st.page_link(r"C:\Users\delfi\OneDrive - Universidad Austral\Desktop\ciencia de datos_app\pages\Profesional Usuario.py",label="Carga un curriculum")
+            st.page_link(r"C:\Users\delfi\OneDrive - Universidad Austral\Desktop\ciencia de datos_app\pages\Matches.py",label="Ver puestos disponibles para vos")
+        else:
+            st.warning("Usuario no registrado")
+            st.page_link(r"C:\Users\delfi\OneDrive - Universidad Austral\Desktop\ciencia de datos_app\pages\Registro Usuario.py",label="Registrarse")
+
+
+with col2:
+    st.header("Empresa")
+    cuit = st.text_input("Ingrese su CUIT", key="cuit_empresa")
+    if st.button("Ingresar como Empresa"):
+        if id_empresa_exist(cuit):
+            st.page_link(r"C:\Users\delfi\OneDrive - Universidad Austral\Desktop\ciencia de datos_app\pages\Puestos disponibles.py",label="Carga un puesto")
+        else:
+            st.warning("Empresa no registrada")
+            st.page_link(r"C:\Users\delfi\OneDrive - Universidad Austral\Desktop\ciencia de datos_app\pages\Registro empresa.py",label="Registrar tu empresa")
+

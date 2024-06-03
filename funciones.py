@@ -118,3 +118,4 @@ def match(dni):
         return pd.DataFrame()  # Devolver un DataFrame vacío en caso de error
     finally:
         conn.close()
+
