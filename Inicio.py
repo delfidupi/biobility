@@ -45,7 +45,7 @@ with col1:
     if st.button("Ingresar como Usuario"):
         if dni_exists(dni):
             st.success("Usuario encontrado")
-            switch_page(Profesional Usuario)
+            switch_page("Profesional Usuario")
         else:
             st.warning("Usuario no registrado")
             if st.button("Registrarse"):
