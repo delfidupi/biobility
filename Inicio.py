@@ -35,7 +35,11 @@ st.markdown(
     ### ¡Regístrate hoy mismo y comienza a dar el siguiente paso en tu carrera profesional con Biobility!
 """
 )
-
+def handle_navigation():
+    if "navigate" in st.session_state:
+        page = st.session_state["navigate"]
+        switch_page(page)
+        
 col1, col2 = st.columns(2)
 
 
@@ -44,10 +48,11 @@ with col1:
     dni = st.text_input("Ingrese su DNI", key="dni_usuario")
     if st.button("Ingresar como Usuario"):
         if dni_exists(dni):
-            st.success("Usuario encontrado")
-            switch_page("Profesional_usuario")
+             st.success("Usuario encontrado")
+            if st.button("Carga un curriculum"):
+                st.session_state["navigate"] = "Profesional_usuario"
             if st.button("Ver puestos disponibles para vos"):
-                switch_page("Matches")
+                st.session_state["navigate"] = "Matches"
         else:
             st.warning("Usuario no registrado")
             if st.button("Registrarse"):
