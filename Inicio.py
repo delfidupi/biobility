@@ -36,28 +36,44 @@ st.markdown(
 """
 )
         
+
+# Colocando las secciones en columnas
 col1, col2 = st.columns(2)
 
-
+# Sección para Usuarios
 with col1:
-    st.header("Usuario")
+    st.header("👤 Usuarios")
     dni = st.text_input("Ingrese su DNI", key="dni_usuario")
-    if st.button("Ingresar como Usuario"):
+
+    if dni:
         if dni_exists(dni):
-            st.success("Usuario encontrado")
-            switch_page("Profesional Usuario")
+            st.success("DNI registrado. ¿Qué te gustaría hacer?")
+            if st.button("Crear Currículum"):
+                switch_page("Profesional Usuario")
+            if st.button("Ver Puestos que Coinciden"):
+                switch_page("Matches")
         else:
-            st.warning("Usuario no registrado")
-            if st.button("Registrarse"):
-                switch_page("Registro_Usuario")
+            st.warning("DNI no registrado. Redirigiendo a la página de registro...")
+            switch_page("Registro Usuario")
 
+# Sección para Empresas
 with col2:
-    st.header("Empresa")
+    st.header("🏢 Empresas")
     cuit = st.text_input("Ingrese su CUIT", key="cuit_empresa")
-    if st.button("Ingresar como Empresa"):
-        if id_empresa_exist(cuit):
-            st.page_link(r"C:\Users\delfi\OneDrive - Universidad Austral\Desktop\ciencia de datos_app\pages\Puestos disponibles.py",label="Carga un puesto")
-        else:
-            st.warning("Empresa no registrada")
-            st.page_link(r"C:\Users\delfi\OneDrive - Universidad Austral\Desktop\ciencia de datos_app\pages\Registro empresa.py",label="Registrar tu empresa")
 
+    if cuit:
+        if id_empresa_exist(cuit):
+            st.success("CUIT registrado. ¿Qué te gustaría hacer?")
+            if st.button("Publicar Puesto"):
+                switch_page("Puestos disponibles")
+        else:
+            st.warning("CUIT no registrado. Redirigiendo a la página de registro...")
+            switch_page("Registro Empresa")
+
+# Pie de página
+st.markdown(
+    """
+    ---
+    **Biobility** - Simplificando tu búsqueda de empleo en el campo de la Ingeniería Biomédica.
+    """
+)
