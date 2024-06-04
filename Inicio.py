@@ -45,11 +45,14 @@ with col1:
     if st.button("Ingresar como Usuario"):
         if dni_exists(dni):
             st.success("Usuario encontrado")
-            switch_page("Profesional Usuario")
-            st.page_link(r"C:\Users\delfi\OneDrive - Universidad Austral\Desktop\ciencia de datos_app\pages\Matches.py",label="Ver puestos disponibles para vos")
+            if st.button("Agrega un curriculum"):
+                switch_page("Profesional_usuario")
+            if st.button("Ver puestos disponibles para vos"):
+                switch_page("Matches")
         else:
             st.warning("Usuario no registrado")
-            st.page_link(r"C:\Users\delfi\OneDrive - Universidad Austral\Desktop\ciencia de datos_app\pages\Registro Usuario.py",label="Registrarse")
+            if st.button("Registrarse"):
+                switch_page("Registro_Usuario")
 
 
 with col2:
