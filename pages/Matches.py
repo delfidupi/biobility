@@ -1,5 +1,7 @@
 import streamlit as st
 from funciones import dni_exists, match 
+from streamlit_extras.switch_page_button import switch_page
+
 
 if "Usuario_encontrado" not in st.session_state:
     st.session_state["Usuario_encontrado"] = False
@@ -26,3 +28,7 @@ if st.session_state.get("Usuario_encontrado", False):
             st.write("---")  # Separador entre puestos
     else:
         st.write("No se encontraron puestos disponibles.")
+
+
+if st.button("Volver al inicio"):
+    switch_page("Inicio")
