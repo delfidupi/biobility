@@ -45,8 +45,7 @@ with col1:
     if st.button("Ingresar como Usuario"):
         if dni_exists(dni):
             st.success("Usuario encontrado")
-            if st.button("Agrega un curriculum"):
-                switch_page("Profesional_usuario")
+            switch_page("Profesional_usuario")
             if st.button("Ver puestos disponibles para vos"):
                 switch_page("Matches")
         else:
