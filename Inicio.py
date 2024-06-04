@@ -54,7 +54,6 @@ with col1:
             if st.button("Registrarse"):
                 switch_page("Registro_Usuario")
 
-
 with col2:
     st.header("Empresa")
     cuit = st.text_input("Ingrese su CUIT", key="cuit_empresa")
