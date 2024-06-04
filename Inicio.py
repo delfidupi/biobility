@@ -48,7 +48,7 @@ with col1:
     dni = st.text_input("Ingrese su DNI", key="dni_usuario")
     if st.button("Ingresar como Usuario"):
         if dni_exists(dni):
-             st.success("Usuario encontrado")
+            st.success("Usuario encontrado")
             if st.button("Carga un curriculum"):
                 st.session_state["navigate"] = "Profesional_usuario"
             if st.button("Ver puestos disponibles para vos"):
