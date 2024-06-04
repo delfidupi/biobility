@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 import streamlit as st
 from funciones import dni_exists, insertUser, insertEmpresa, id_empresa_exist
-
+from streamlit_extras.switch_page_button import switch_page
 
 
 
@@ -45,7 +45,7 @@ with col1:
     if st.button("Ingresar como Usuario"):
         if dni_exists(dni):
             st.success("Usuario encontrado")
-            st.page_link(r"C:\Users\delfi\OneDrive - Universidad Austral\Desktop\ciencia de datos_app\pages\Profesional Usuario.py",label="Carga un curriculum")
+            switch_page("Profesional Usuario")
             st.page_link(r"C:\Users\delfi\OneDrive - Universidad Austral\Desktop\ciencia de datos_app\pages\Matches.py",label="Ver puestos disponibles para vos")
         else:
             st.warning("Usuario no registrado")
