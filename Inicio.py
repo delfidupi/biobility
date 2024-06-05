@@ -13,7 +13,7 @@ st.set_page_config(
 )
 
 st.write("# Biobility 🔎")
-
+st.image("C:\Users\delfi\OneDrive - Universidad Austral\Desktop\logo.jpg", caption="Aquí está tu imagen", use_column_width=True)
 st.sidebar.success("Seleccioná lo que estas buscando!")
 
 st.markdown(
