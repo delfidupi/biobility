@@ -17,7 +17,7 @@ if st.button('Buscar'):
         st.session_state["Usuario_encontrado"] = False
 
 # Mostrar formulario de datos profesionales si el usuario es encontrado
-if st.session_state["Usuario_encontrado"]:
+if st.session_state.get("Usuario_encontrado", False):
     st.subheader('Carga tus datos profesionales')
     especialidad = st.selectbox("Especialidad: Bioinformatica (B), Protesis (P), Genética (G), Imagenes biomedicas (I)", ("B", "P", "G", "I"))
     turno = st.selectbox("Turno: Mañana (M), Tarde (T), Noche (N)", ("M", "T", "N"))
