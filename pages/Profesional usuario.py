@@ -7,7 +7,7 @@ if "Usuario_encontrado" not in st.session_state:
     st.session_state["Usuario_encontrado"] = False
     
 st.title("Ingreso de usuario")
-dni = st.subheader(st.text_input("Ingrese su DNI antes de continuar"))
+dni = st.text_input("Ingrese su DNI antes de continuar")
 
 # Mostrar botón "Buscar" inicialmente
 if st.button('Buscar'):
