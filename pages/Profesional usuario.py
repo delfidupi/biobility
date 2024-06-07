@@ -38,8 +38,8 @@ if st.session_state["Usuario_encontrado"]:
             st.session_state.saved = True
             st.session_state["Usuario_encontrado"] = False
             st.success("Datos guardados correctamente")
-            with st.spinner('Cargando...'):
-                time.sleep(2)  # Espera de 2 segundos
+            with st.spinner('Aguarde para ver sus coincidencias!...'):
+                time.sleep(5)  # Espera de 2 segundos
             switch_page("Matches")  # Esto debería ser reemplazado con tu lógica para cambiar de página
 
 
