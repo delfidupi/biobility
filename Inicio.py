@@ -5,7 +5,14 @@ import streamlit as st
 from funciones import dni_exists, insertUser, insertEmpresa, id_empresa_exist
 from streamlit_extras.switch_page_button import switch_page
 
+st.set_page_config(
+    page_title="Biobility",
+    page_icon="🔎",
+)
 
+st.write("# Biobility 🔎")
+
+st.sidebar.success("Seleccioná lo que estas buscando!")
 st.markdown(
     """
     <style>
@@ -16,15 +23,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-st.set_page_config(
-    page_title="Biobility",
-    page_icon="🔎",
-)
-
-st.write("# Biobility 🔎")
-
-st.sidebar.success("Seleccioná lo que estas buscando!")
 
 st.markdown(
     """
