@@ -12,7 +12,6 @@ st.set_page_config(
 
 st.write("# Biobility 🔎")
 
-st.sidebar.success("Seleccioná lo que estas buscando!")
 st.markdown(
     """
     <style>
