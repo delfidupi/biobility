@@ -42,7 +42,7 @@ if st.button("Guardar"):
 
 # Mostrar el botón "Crear un curriculum" solo si los datos han sido guardados
 if st.session_state.saved:
-    if st.button("Crear un curriculum"):
+    if st.button("Ver puestos disponibles para vos"):
         with st.spinner('Cargando...'):
             time.sleep(2)  # Espera de 2 segundos
-        switch_page("Profesional Usuario")
+        switch_page("Matches")
