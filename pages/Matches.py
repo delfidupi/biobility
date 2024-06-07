@@ -18,7 +18,7 @@ if st.button('Buscar'):
             puestos = match(st.session_state["dni"])  # Asegúrate de que esta función ejecute la consulta SQL y devuelva un DataFrame con las columnas nombre, descripcion y contacto
             if not puestos.empty:  # Check if the DataFrame is not empty
                 for index, row in puestos.iterrows():
-                    st.write(f"🤝Nombre: {row['nombre']}")
+                    st.write(f"🔵Nombre: {row['nombre']}")
                     st.write(f"Descripción: {row['descripcion']}")
                     st.write(f"Contacto: {row['contacto']}")
                     st.write("---")  # Separador entre puestos
