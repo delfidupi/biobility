@@ -1,5 +1,6 @@
 import streamlit as st
 import time 
+from streamlit_extras.switch_page_button import switch_page
 
 from funciones import insertUser
 
@@ -20,6 +21,7 @@ if st.button("Crear un curriculum"):
     with st.spinner('Cargando...'):
         time.sleep(1)  # Espera de 1 segundo
     switch_page("Profesional Usuario")
+    
         
 
 
