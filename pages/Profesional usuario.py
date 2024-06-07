@@ -38,7 +38,8 @@ if st.session_state["Usuario_encontrado"]:
             st.session_state.saved = True
             st.session_state["Usuario_encontrado"] = False
             st.success("Datos guardados correctamente")
-            if st.button("Ver puestos disponibles para vos"):
-                    with st.spinner('Cargando...'):
-                        time.sleep(2)  # Espera de 2 segundos
-                    switch_page("Matches")  # Esto debería ser reemplazado con tu lógica para cambiar de página
+    
+if st.button("Ver puestos disponibles para vos"):
+    with st.spinner('Cargando...'):
+        time.sleep(2)  # Espera de 2 segundos
+    switch_page("Matches")  # Esto debería ser reemplazado con tu lógica para cambiar de página
