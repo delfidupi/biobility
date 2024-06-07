@@ -18,7 +18,7 @@ if st.button("Guardar"):
     else:
         insertUser(dni, nombre, cumpleaños, zona)
         with st.spinner('Cargando...'):
-            time.sleep(2)  # Espera de 2 segundos
+            time.sleep(4)  # Espera de 2 segundos
         switch_page("Profesional Usuario")
 
 
