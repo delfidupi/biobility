@@ -27,6 +27,10 @@ if st.session_state.get("Usuario_encontrado", False):
 if 'saved' not in st.session_state:
     st.session_state.saved = False
 
+# Definir el estado de guardado
+if 'saved' not in st.session_state:
+    st.session_state.saved = False
+
 if st.button("Guardar"):
     if not dni or not especialidad or not turno or not presencialidad or not estudios or not experienciaLaboral:
         st.error("Por favor completa todos los campos")
@@ -38,7 +42,7 @@ if st.button("Guardar"):
 
 # Mostrar el botón "Crear un curriculum" solo si los datos han sido guardados
 if st.session_state.saved:
-    if st.button("Ver puestos disponibles para vos"):
+    if st.button("Crear un curriculum"):
         with st.spinner('Cargando...'):
             time.sleep(2)  # Espera de 2 segundos
-        switch_page("Matches")
+        switch_page("Profesional Usuario")
