@@ -6,6 +6,16 @@ from funciones import dni_exists, insertUser, insertEmpresa, id_empresa_exist
 from streamlit_extras.switch_page_button import switch_page
 
 
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #add8e6;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 st.set_page_config(
     page_title="Biobility",
