@@ -7,8 +7,6 @@ from streamlit_extras.switch_page_button import switch_page
 if "Usuario_encontrado" not in st.session_state:
     st.session_state["Usuario_encontrado"] = False
 
-if 'saved' not in st.session_state:
-    st.session_state.saved = False
 
 st.title("Ingreso de usuario")
 dni = st.text_input("DNI")
@@ -40,8 +38,7 @@ if st.session_state["Usuario_encontrado"]:
             st.session_state.saved = True
             st.session_state["Usuario_encontrado"] = False
             st.success("Datos guardados correctamente")
-            if st.session_state.saved:
-                if st.button("Ver puestos disponibles para vos"):
+            if st.button("Ver puestos disponibles para vos"):
                     with st.spinner('Cargando...'):
                         time.sleep(2)  # Espera de 2 segundos
                     switch_page("Matches")  # Esto debería ser reemplazado con tu lógica para cambiar de página
