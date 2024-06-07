@@ -23,11 +23,22 @@ if st.session_state.get("Usuario_encontrado", False):
     estudios = st.text_input("¿Donde te recibiste?")
     experienciaLaboral = st.selectbox("¿Tenes experiencia laboral?", ("Si", "No"))
 
-    if st.button("Guardar"):
-        if not dni or not especialidad or not turno or not presencialidad or not estudios or not experienciaLaboral:
-            st.error("Por favor completa todos los campos")
-        else:
-            insertCurriculum(dni, especialidad, turno, presencialidad, estudios, experienciaLaboral)
-            st.session_state['Usuario_encontrado'] = False
+# Definir el estado de guardado
+if 'saved' not in st.session_state:
+    st.session_state.saved = False
 
+if st.button("Guardar"):
+    if not dni or not especialidad or not turno or not presencialidad or not estudios or not experienciaLaboral:
+        st.error("Por favor completa todos los campos")
+    else:
+        insertCurriculum(dni, especialidad, turno, presencialidad, estudios, experienciaLaboral)
+        st.session_state.saved = True
+        st.session_state['Usuario_encontrado'] = False
+        st.success("Datos guardados correctamente")
 
+# Mostrar el botón "Crear un curriculum" solo si los datos han sido guardados
+if st.session_state.saved:
+    if st.button("Ver puestos disponibles para vos"):
+        with st.spinner('Cargando...'):
+            time.sleep(2)  # Espera de 2 segundos
+        switch_page("Matches")
