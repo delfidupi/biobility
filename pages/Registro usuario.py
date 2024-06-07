@@ -14,3 +14,10 @@ if st.button("Guardar"):
         st.error("Por favor completa todos los campos")
     else:
         insertUser(dni, nombre, cumpleaños, zona)
+        if st.button("Crear un curriculum"):
+            with st.spinner('Cargando...'):
+                time.sleep(1)  # Espera de 1 segundo
+            switch_page("Profesional Usuario")
+        
+
+
