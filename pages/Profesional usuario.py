@@ -3,7 +3,9 @@ from funciones import insertCurriculum, dni_exists
 import time
 from streamlit_extras.switch_page_button import switch_page
 
-
+if "Usuario_encontrado" not in st.session_state:
+    st.session_state["Usuario_encontrado"] = False
+    
 st.title("Ingreso de usuario")
 dni = st.text_input("DNI")
 
