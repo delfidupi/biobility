@@ -18,7 +18,7 @@ if st.button('Buscar'):
         st.error("Usuario no encontrado")
         st.session_state["Usuario_encontrado"] = False
 
-if st.session_state.get("Usuario_encontrado", False):
+if st.session_state["Usuario_encontrado"]:
     st.subheader('Carga tus datos profesionales')
     especialidad = st.selectbox("Especialidad: Bioinformatica (B), Protesis (P), Genética (G), Imagenes biomedicas (I)", ("B", "P", "G", "I"))
     turno = st.selectbox("Turno: Mañana (M), Tarde (T), Noche (N)", ("M", "T", "N"))
