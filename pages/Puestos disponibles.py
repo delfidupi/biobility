@@ -5,7 +5,7 @@ if "Empresa_encontrada" not in st.session_state:
     st.session_state["Empresa_encontrada"] = False
 
 
-st.title("Descripcion del puesto")
+st.title("Publique un puesto")
 id_empresa = st.text_input("CUIT")
 
 if st.button('Buscar'):
