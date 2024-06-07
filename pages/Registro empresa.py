@@ -12,3 +12,7 @@ if st.button("Guardar"):
         st.error("Por favor completa todos los campos")
     else:
         insertEmpresa(id_empresa, nombre, zona)
+        with st.spinner('Cargando...'):
+            time.sleep(4)  # Espera de 2 segundos
+        switch_page("Puestos disponibles")
+
