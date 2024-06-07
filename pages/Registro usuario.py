@@ -1,4 +1,5 @@
 import streamlit as st
+import time 
 
 from funciones import insertUser
 
