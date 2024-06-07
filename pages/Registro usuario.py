@@ -8,7 +8,7 @@ st.session_state["Usuario encontrado"] = False
 st.title("Ingreso de usuario")
 dni = st.text_input("DNI")
 nombre = st.text_input("Nombre y apellido")
-cumpleaños = st.date_input("Fecha de nacimiento")
+cumpleaños = st.date_input("Fecha de nacimiento", value=datetime(2000, 1, 1), min_value=datetime(1900, 1, 1), max_value=datetime.today())
 zona = st.selectbox("Zona de trabajo: Norte/Sur/Oeste/CABA", ("N", "O", "S", "C"))
 
 
