@@ -30,5 +30,7 @@ if st.session_state.get("Usuario_encontrado", False):
         st.write("No se encontraron puestos disponibles.")
 
 
-if st.button("Volver al inicio"):
-    switch_page("Inicio")
+if st.button("Publicar Puesto"):
+    with st.spinner('Publicando puesto...'):
+        time.sleep(1)  # Espera de 1 segundo
+    switch_page("Puestos disponibles")
