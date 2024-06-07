@@ -1,5 +1,7 @@
 import streamlit as st
 from funciones import insertEmpresa
+import time 
+from streamlit_extras.switch_page_button import switch_page
 
 st.session_state["Empresa encontrado"] = False
 st.title("Registrar Empresa")
