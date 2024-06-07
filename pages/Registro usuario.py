@@ -1,6 +1,8 @@
 import streamlit as st
 import time 
 from streamlit_extras.switch_page_button import switch_page
+from datetime import datetime
+
 
 from funciones import insertUser
 
