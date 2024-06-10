@@ -4,7 +4,9 @@ from pathlib import Path
 import streamlit as st
 from funciones import dni_exists, insertUser, insertEmpresa, id_empresa_exist
 from streamlit_extras.switch_page_button import switch_page
-
+from PIL import Image
+import requests
+from io import BytesIO
 
 # Configuración de la página sin un ícono de emoji específico
 st.set_page_config(page_title="Biobility")
