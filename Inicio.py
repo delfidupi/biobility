@@ -10,7 +10,7 @@ st.set_page_config(
     page_icon="🔎",
 )
 # URL de la imagen en GitHub
-image_url = 'https://github.com/delfidupi/repositorio/main/logo.jpg'
+image_url = 'https://github.com/delfidupi/repository/main/logo.jpg'
 
 # Mostrar la imagen en la aplicación de Streamlit
 st.image(image_url, caption='Descripción de la imagen', use_column_width=True)
