@@ -12,6 +12,45 @@ from io import BytesIO
 st.set_page_config(page_title="Biobility")
 
 # URL de la imagen en GitHub
+image_url = "https://github.com/delfidupi/biobility/blob/main/logo.jpg?raw=true"
+
+# Descargar la imagen desde la URL
+response = requests.get(image_url)
+image = Image.open(BytesIO(response.content))
+
+# Convertir la imagen a formato base64 para incrustarla en HTML
+import base64
+buffered = BytesIO()
+image.save(buffered, format="JPEG")
+img_str = base64.b64encode(buffered.getvalue()).decode()
+
+# CSS para personalizar la apariencia
+st.markdown(f"""
+    <style>
+    .header-container {{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }}
+    .header-logo {{
+        width: 100px;
+        margin-right: 20px;
+    }}
+    .header-title {{
+        font-size: 2.5em;
+        font-weight: bold;
+    }}
+    </style>
+    <div class="header-container">
+        <img src="data:image/jpeg;base64,{img_str}" class="header-logo">
+        <div class="header-title">Biobility</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+# Configuración de la página sin un ícono de emoji específico
+st.set_page_config(page_title="Biobility")
+
+# URL de la imagen en GitHub
 image_url = "https://github.com/delfidupi/biobility/raw/main/logo.jpg"
 
 # Descargar la imagen desde la URL
