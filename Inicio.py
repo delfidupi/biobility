@@ -47,37 +47,6 @@ st.markdown(f"""
     </div>
     """, unsafe_allow_html=True)
 
-# Configuración de la página sin un ícono de emoji específico
-st.set_page_config(page_title="Biobility")
-
-# URL de la imagen en GitHub
-image_url = "https://github.com/delfidupi/biobility/raw/main/logo.jpg"
-
-# Descargar la imagen desde la URL
-response = requests.get(image_url)
-image = Image.open(BytesIO(response.content))
-
-# Mostrar la imagen en la aplicación de Streamlit con tamaño ajustado
-st.image(image, caption='Descripción de la imagen', width=100)
-
-# CSS para personalizar la apariencia
-st.markdown("""
-    <style>
-    /* Agrandar el título */
-    .css-10trblm {
-        font-size: 2.5em;
-        font-weight: bold;
-    }
-    /* Centrar el logo */
-    .css-1v3fvcr {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-# Mostrar el título de la aplicación
 st.title('Biobility')
 st.markdown(
     """
