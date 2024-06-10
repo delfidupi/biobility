@@ -8,7 +8,7 @@ from PIL import Image
 import requests
 from io import BytesIO
 
-# Configuración de la página sin un ícono de emoji específico
+
 st.set_page_config(page_title="Biobility")
 
 # URL de la imagen en GitHub
