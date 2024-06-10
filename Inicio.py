@@ -13,7 +13,7 @@ st.set_page_config(
 image_url = 'https://github.com/usuario/repositorio/raw/main/logo.jpg'
 
 # Mostrar la imagen en la aplicación de Streamlit
-st.image(image_url)
+st.image(image_url, caption='Descripción de la imagen', use_column_width=True)
 
 st.write("# Biobility 🔎")
 
