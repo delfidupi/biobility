@@ -4,7 +4,14 @@ import time
 from streamlit_extras.switch_page_button import switch_page
 
 st.session_state["Empresa encontrado"] = False
-st.title("Registrar Empresa")
+st.markdown(
+    """
+    <h1 style="font-family: 'Roboto', sans-serif; color: #494666;">
+        Registrar Empresa
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
 id_empresa = st.text_input("CUIT")
 nombre = st.text_input("Nombre")
 zona = st.selectbox("Zona de la empresa: Norte/Sur/Oeste/CABA", ("N", "O", "S", "C"))
