@@ -15,33 +15,8 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background-color: #e0f7ff;
-        position: relative;
-    }
-    .logo-container {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-    }
-    .logo-img {
-        width: 30px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-st.markdown(
-    """
-    <div class="logo-container">
-        <img src="https://github.com/delfidupi/biobility/blob/main/logo.jpg?raw=true">
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+
+
 # Campos de entrada
 dni = st.text_input("DNI")
 nombre = st.text_input("Nombre y apellido")
