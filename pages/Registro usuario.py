@@ -7,26 +7,6 @@ from datetime import datetime
 from funciones import insertUser
 
 st.session_state["Usuario encontrado"] = False
-st.markdown(
-    """
-    <style>
-    .stTextInput > div > div > input {
-        background-color: #e0f7ff;  /* Cambia el color de fondo */
-        color: #00008B;  /* Cambia el color del texto */
-    }
-    .stDateInput > div > div > input {
-        background-color: #e0f7ff;  /* Cambia el color de fondo */
-        color: #00008B;  /* Cambia el color del texto */
-    }
-    .stSelectbox > div > div > input {
-        background-color: #e0f7ff;  /* Cambia el color de fondo */
-        color: #00008B;  /* Cambia el color del texto */
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 st.title("Ingreso de usuario")
 
 # Campos de entrada
