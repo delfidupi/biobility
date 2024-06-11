@@ -9,12 +9,6 @@ from funciones import insertUser
 st.session_state["Usuario encontrado"] = False
 st.markdown(
     """
-    <h1 style="font-family: 'Times New roman'; color: #494666;">
-        Ingreso de usuario
-    </h1>
-    """,
-    unsafe_allow_html=True
-)
     <style>
     .stTextInput > div > div > input {
         background-color: #e0f7ff;  /* Cambia el color de fondo */
@@ -39,7 +33,7 @@ st.title("Ingreso de usuario")
 dni = st.text_input("DNI")
 nombre = st.text_input("Nombre y apellido")
 cumpleaños = st.date_input("Fecha de nacimiento", value=datetime(2000, 1, 1), min_value=datetime(1900, 1, 1), max_value=datetime.today())
-zona = st.selectbox("Zona de trabajo: Norte/Sur/Oeste/CABA", ("N", "O", "S", "C"))
+zona = st.selectbox("Zona de trabajo: Norte/Sur/Oeste/CABA", ("N", "O", "S", "C"))
 
 st.markdown(
     """
