@@ -7,6 +7,16 @@ if "Empresa_encontrada" not in st.session_state:
 
 st.title("Publique un puesto")
 id_empresa = st.text_input("CUIT")
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #e0f7ff;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 if st.button('Buscar'):
     if id_empresa_exist(id_empresa):
