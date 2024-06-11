@@ -8,6 +8,16 @@ if "Usuario_encontrado" not in st.session_state:
     
 st.title("Ingreso de usuario")
 dni = st.text_input("Ingrese su DNI")
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #e0f7ff;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # Mostrar botón "Buscar" inicialmente
 if st.button('Buscar'):
