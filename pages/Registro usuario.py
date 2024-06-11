@@ -15,7 +15,25 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #e0f7ff;
+        position: relative;
+    }
+    .logo-container {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    .logo-img {
+        width: 30px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 st.markdown(
     """
     <div class="logo-container">
