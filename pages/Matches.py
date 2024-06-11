@@ -22,6 +22,7 @@ if st.button('Buscar'):
                     st.write(f"Descripción: {row['descripcion']}")
                     st.write(f"Contacto: {row['contacto']}")
                     st.write("---")  # Separador entre puestos
+            st.globos()
             else:
                 st.write("No se encontraron puestos disponibles.")
     else:
