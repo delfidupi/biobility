@@ -76,7 +76,19 @@ st.markdown(
     ### ¡Regístrate hoy mismo y comienza a dar el siguiente paso en tu carrera profesional con Biobility!
 """
 )
-        
+
+# Función para obtener los DNIs almacenados en las cookies
+def get_recent_dnis():
+    recent_dnis = st.session_state.get('recent_dnis', [])
+    return recent_dnis
+
+# Función para almacenar un nuevo DNI en las cookies
+def add_recent_dni(dni):
+    recent_dnis = get_recent_dnis()
+    if dni not in recent_dnis:
+        recent_dnis.append(dni)
+        st.session_state['recent_dnis'] = recent_dnis
+
 # Crear pestañas para cambiar entre Usuario y Empresa
 tab1, tab2 = st.tabs(["Soy Usuario", "Soy Empresa"])
 
@@ -115,3 +127,5 @@ st.markdown(
     **Biobility** - Simplificando tu búsqueda de empleo en el campo de la Ingeniería Biomédica.
     """
 )
+
+
