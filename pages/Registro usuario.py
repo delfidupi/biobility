@@ -9,12 +9,13 @@ from funciones import insertUser
 st.session_state["Usuario encontrado"] = False
 st.markdown(
     """
-    <h1 style="'Poppins', sans-serif; color: #494666;">
+    <h1 style="font-family: 'Poppins', sans-serif; color: #494666;">
         Ingreso de usuario
     </h1>
     """,
     unsafe_allow_html=True
 )
+
 # Campos de entrada
 dni = st.text_input("DNI")
 nombre = st.text_input("Nombre y apellido")
