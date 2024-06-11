@@ -29,6 +29,7 @@ if st.session_state.get("Empresa_encontrada", False):
         if not id_empresa or not especialidad or not turno or not presencialidad or not experienciaLaboral or not descripcion or not contacto:
             st.error("Por favor completa todos los campos")
         else:
+            st.text_input("¡Muchas gracias! Espero que pronto encontremos al candidato perfecto para el puesto que ofreces. Le dejaremos su teléfono de contacto para que se comunique contigo.")
             insertPostulacion(id_empresa, especialidad, turno, presencialidad, experienciaLaboral, descripcion, contacto)
             st.session_state['Empresa_encontrada'] = False
 
