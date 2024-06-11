@@ -19,7 +19,7 @@ st.markdown(
 st.markdown(
     """
     <div class="logo-container">
-        <img src="https://github.com/delfidupi/biobility/blob/main/logo.jpg?raw=true" width="50">
+        <img src="https://github.com/delfidupi/biobility/blob/main/logo.jpg?raw=true">
     </div>
     """,
     unsafe_allow_html=True
