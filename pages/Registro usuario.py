@@ -7,6 +7,19 @@ from datetime import datetime
 from funciones import insertUser
 
 st.session_state["Usuario encontrado"] = False
+custom_css = """
+<style>
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: blue;
+}
+
+p {
+    font-family: 'Arial', sans-serif;
+    color: green;
+}
+</style>
+"""
 st.title("Ingreso de usuario")
 dni = st.text_input("DNI")
 nombre = st.text_input("Nombre y apellido")
