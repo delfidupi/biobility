@@ -12,6 +12,38 @@ dni = st.text_input("DNI")
 nombre = st.text_input("Nombre y apellido")
 cumpleaños = st.date_input("Fecha de nacimiento", value=datetime(2000, 1, 1), min_value=datetime(1900, 1, 1), max_value=datetime.today())
 zona = st.selectbox("Zona de trabajo: Norte/Sur/Oeste/CABA", ("N", "O", "S", "C"))
+st.markdown(f"""
+    <style>
+    .header-container {{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }}
+    .header-logo {{
+        width: 100px;
+        margin-right: 20px;
+    }}
+    .header-title {{
+        font-size: 2.5em;
+        font-weight: bold;
+    }}
+    </style>
+    <div class="header-container">
+        <img src="data:image/jpeg;base64,{img_str}" class="header-logo">
+        <div class="header-title">Biobility</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #e0f7ff;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 
 if st.button("Guardar"):
