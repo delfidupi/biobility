@@ -7,8 +7,14 @@ from datetime import datetime
 from funciones import insertUser
 
 st.session_state["Usuario encontrado"] = False
-st.title("Ingreso de usuario")
-
+st.markdown(
+    """
+    <h1 style="font-family: 'Sans Serif'; color: #494666;">
+        Ingreso de usuario
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
 # Campos de entrada
 dni = st.text_input("DNI")
 nombre = st.text_input("Nombre y apellido")
