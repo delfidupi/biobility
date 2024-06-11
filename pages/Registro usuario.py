@@ -9,7 +9,7 @@ from funciones import insertUser
 st.session_state["Usuario encontrado"] = False
 st.markdown(
     """
-    <h1 style="'Roboto', sans-serif; color: #494666;">
+    <h1 style="'Poppins', sans-serif; color: #494666;">
         Ingreso de usuario
     </h1>
     """,
