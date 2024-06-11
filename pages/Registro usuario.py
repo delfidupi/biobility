@@ -7,20 +7,14 @@ from datetime import datetime
 from funciones import insertUser
 
 st.session_state["Usuario encontrado"] = False
-custom_css = """
-<style>
-h1 {
-    font-family: 'Courier New', Courier, monospace;
-    color: blue;
-}
-
-p {
-    font-family: 'Arial', sans-serif;
-    color: green;
-}
-</style>
-"""
-st.title("Ingreso de usuario")
+st.markdown(
+    """
+    <h1 style="font-family: 'Arial'; color: #4CAF50;">
+        Ingreso de usuario
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
 dni = st.text_input("DNI")
 nombre = st.text_input("Nombre y apellido")
 cumpleaños = st.date_input("Fecha de nacimiento", value=datetime(2000, 1, 1), min_value=datetime(1900, 1, 1), max_value=datetime.today())
