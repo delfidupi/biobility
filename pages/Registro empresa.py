@@ -8,6 +8,16 @@ st.title("Registrar Empresa")
 id_empresa = st.text_input("CUIT")
 nombre = st.text_input("Nombre")
 zona = st.selectbox("Zona de la empresa: Norte/Sur/Oeste/CABA", ("N", "O", "S", "C"))
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #e0f7ff;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 if st.button("Guardar"):
     if not id_empresa or not nombre or not zona:
