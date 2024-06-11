@@ -95,6 +95,14 @@ tab1, tab2 = st.tabs(["Soy Usuario", "Soy Empresa"])
 with tab1:
     st.header("👤 Usuarios")
     dni = st.text_input("Ingrese su DNI", key="dni_usuario")
+    # Mostrar DNIs recientes como opciones
+    recent_dnis = get_recent_dnis()
+    if recent_dnis:
+        st.write("DNIs recientes:")
+        for recent_dni in recent_dnis:
+            if st.button(recent_dni):
+                dni = recent_dni
+                st.session_state['dni_usuario'] = dni
 
     if dni:
         if dni_exists(dni):
@@ -103,6 +111,7 @@ with tab1:
                 switch_page("Profesional Usuario")
             if st.button("Ver Puestos que Coinciden"):
                 switch_page("Matches")
+            add_recent_dni(dni)  # Almacenar el DNI ingresado
         else:
             st.warning("DNI no registrado. Redirigiendo a la página de registro...")
             switch_page("Registro Usuario")
@@ -127,5 +136,3 @@ st.markdown(
     **Biobility** - Simplificando tu búsqueda de empleo en el campo de la Ingeniería Biomédica.
     """
 )
-
-
