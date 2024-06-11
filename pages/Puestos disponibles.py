@@ -5,7 +5,14 @@ if "Empresa_encontrada" not in st.session_state:
     st.session_state["Empresa_encontrada"] = False
 
 
-st.title("Publique un puesto")
+st.markdown(
+    """
+    <h1 style="font-family: 'Roboto', sans-serif; color: #494666;">
+        Publique un puesto
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
 id_empresa = st.text_input("CUIT")
 st.markdown(
     """
