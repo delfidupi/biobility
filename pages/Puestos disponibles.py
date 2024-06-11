@@ -31,7 +31,7 @@ if st.session_state.get("Empresa_encontrada", False):
         else:
             insertPostulacion(id_empresa, especialidad, turno, presencialidad, experienciaLaboral, descripcion, contacto)
             st.session_state['Empresa_encontrada'] = False
-            st.markdown("###¡Muchas gracias! Espero que pronto encontremos al candidato perfecto para el puesto que ofreces. Le dejaremos su teléfono de contacto para que se comunique contigo.")
+            st.markdown("""###¡Muchas gracias! Espero que pronto encontremos al candidato perfecto para el puesto que ofreces. Le dejaremos su teléfono de contacto para que se comunique contigo.""")
             
 
 
