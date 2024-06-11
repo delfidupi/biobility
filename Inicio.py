@@ -76,33 +76,13 @@ st.markdown(
     ### ¡Regístrate hoy mismo y comienza a dar el siguiente paso en tu carrera profesional con Biobility!
 """
 )
-
-# Función para obtener los DNIs almacenados en las cookies
-def get_recent_dnis():
-    recent_dnis = st.session_state.get('recent_dnis', [])
-    return recent_dnis
-
-# Función para almacenar un nuevo DNI en las cookies
-def add_recent_dni(dni):
-    recent_dnis = get_recent_dnis()
-    if dni not in recent_dnis:
-        recent_dnis.append(dni)
-        st.session_state['recent_dnis'] = recent_dnis
-
+        
 # Crear pestañas para cambiar entre Usuario y Empresa
 tab1, tab2 = st.tabs(["Soy Usuario", "Soy Empresa"])
 
 with tab1:
     st.header("👤 Usuarios")
     dni = st.text_input("Ingrese su DNI", key="dni_usuario")
-    # Mostrar DNIs recientes como opciones
-    recent_dnis = get_recent_dnis()
-    if recent_dnis:
-        st.write("DNIs recientes:")
-        for recent_dni in recent_dnis:
-            if st.button(recent_dni):
-                dni = recent_dni
-                st.session_state['dni_usuario'] = dni
 
     if dni:
         if dni_exists(dni):
@@ -111,7 +91,6 @@ with tab1:
                 switch_page("Profesional Usuario")
             if st.button("Ver Puestos que Coinciden"):
                 switch_page("Matches")
-            add_recent_dni(dni)  # Almacenar el DNI ingresado
         else:
             st.warning("DNI no registrado. Redirigiendo a la página de registro...")
             switch_page("Registro Usuario")
