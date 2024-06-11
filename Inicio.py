@@ -94,7 +94,7 @@ with tab1:
                 switch_page("Matches")
         else:
             with st.spinner("DNI no registrado. Redirigiendo a la página de registro..."):
-            time.sleep(4)  # Espera de 2 segundos
+                time.sleep(4)  # Espera de 2 segundos
             switch_page("Registro Usuario")
 
 with tab2:
