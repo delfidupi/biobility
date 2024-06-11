@@ -77,12 +77,10 @@ st.markdown(
 """
 )
         
+# Crear pestañas para cambiar entre Usuario y Empresa
+tab1, tab2 = st.tabs(["Soy Usuario", "Soy Empresa"])
 
-# Colocando las secciones en columnas
-col1, col2 = st.columns(2)
-
-# Sección para Usuarios
-with col1:
+with tab1:
     st.header("👤 Usuarios")
     dni = st.text_input("Ingrese su DNI", key="dni_usuario")
 
@@ -97,8 +95,7 @@ with col1:
             st.warning("DNI no registrado. Redirigiendo a la página de registro...")
             switch_page("Registro Usuario")
 
-# Sección para Empresas
-with col2:
+with tab2:
     st.header("🏢 Empresas")
     cuit = st.text_input("Ingrese su CUIT", key="cuit_empresa")
 
