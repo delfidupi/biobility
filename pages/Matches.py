@@ -1,7 +1,16 @@
 import streamlit as st
 from funciones import dni_exists, match 
 from streamlit_extras.switch_page_button import switch_page
-
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #e0f7ff;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 if "Usuario_encontrado" not in st.session_state:
     st.session_state["Usuario_encontrado"] = False
