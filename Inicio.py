@@ -92,7 +92,8 @@ with tab1:
             if st.button("Ver Puestos que Coinciden"):
                 switch_page("Matches")
         else:
-            st.warning("DNI no registrado. Redirigiendo a la página de registro...")
+            with st.spinner("DNI no registrado. Redirigiendo a la página de registro..."):
+            time.sleep(4)  # Espera de 2 segundos
             switch_page("Registro Usuario")
 
 with tab2:
