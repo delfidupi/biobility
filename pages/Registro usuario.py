@@ -15,6 +15,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+st.image("https://github.com/delfidupi/biobility/blob/main/logo.jpg?raw=true", width=50)
 
 # Campos de entrada
 dni = st.text_input("DNI")
