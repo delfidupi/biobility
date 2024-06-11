@@ -6,7 +6,14 @@ from streamlit_extras.switch_page_button import switch_page
 if "Usuario_encontrado" not in st.session_state:
     st.session_state["Usuario_encontrado"] = False
     
-st.title("Ingreso de usuario")
+st.markdown(
+    """
+    <h1 style="font-family: 'Roboto', sans-serif; color: #494666;">
+        Ingreso de usuario
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
 dni = st.text_input("Ingrese su DNI")
 st.markdown(
     """
